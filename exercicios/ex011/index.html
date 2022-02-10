@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTMLL5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir este site em vários dispositivos diferentes ou simplementes aumente e diminua o tamanho do seu navegador.</p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p> <!--MP3, WAVE, OGG-->
+    <p><audio src="midia/guanacast-33.mp3"  autoplay controls></audio> - Podcast Guanabara</p>
+    <!--O codigo de cima pode não ser compativel com alguns navegadores, portanto há outra forma que será exemplicada abaixo-->
+    <audio preload="metadata" controls loop> <!-- a tag preload será como sera carregado o arquivo(cuidado com autodata), controls apresenta os comandos de audio, o loop repete a musica em looping-->
+        <source src="midia/happy-mistake.mp3" type="audio/mpeg">
+        <source src="midia/happy-mistake.ogg" type="audio/ogg">
+        <source src="midia/happy-mistake.wav" type="audio/wav">
+        <!-- É interessante carregar o mesmo audio em varios formatos pois alguns navegadores pode não reproduzir determinada extensão, então coloque na ordem (extensão mais leve para a mais pesada) na qual o navegador irá tentar até abri algum deles, sempre contando de cima para baixo, caso nenhum deles carregar podemos deixar uma mensagem ao usuário como a do exemplo abaixo-->
+        <p>Infelizmente seu navegador não reproduz áudio</p><a href="midia/happy-mistake.mp3">Faça o download do áudio aqui.</a>
+    </audio>
+</body>
+</html>
